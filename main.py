@@ -4,28 +4,32 @@ import reproduzirSom
 import botao
 
 # Localização indicando se está esgotado ou não
-x = 1376
-y = 568
+x = 1278
+y = 788
 
 while True:
-    time.sleep(5)
+    time.sleep(2)
     pyautogui.press('f5')
     time.sleep(2)
-    pyautogui.press('f3')
-    time.sleep(1)
+    #pyautogui.press('f3')
+    #time.sleep(1)
 
     if botao.botaoativo(x, y):
 
         # Clicks para a quantidade de ingressos
-        pyautogui.click(x=1299, y=575, clicks=5)
+        pyautogui.click(x=1302, y=825, clicks=5)
 
         # Click para abrir o modal
-        pyautogui.click(x=1393, y=985)
+        pyautogui.click(x=1296, y=999)
 
         # Clicks para confirmar
         time.sleep(2)
-        pyautogui.click(x=1100, y=754)
-        pyautogui.click(x=656, y=753)
-        pyautogui.click(x=1122, y=811)
-        reproduzirSom.reproduzirmusica()
-        break
+        pyautogui.click(x=1114, y=749)
+        pyautogui.click(x=641, y=758)
+        pyautogui.click(x=1140, y=819)
+
+        time.sleep(3)
+
+        if botao.compraSucesso(x=883, y=626):
+            reproduzirSom.reproduzirmusica()
+            break
